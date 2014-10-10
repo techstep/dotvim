@@ -44,7 +44,7 @@ Plugin 'mustache/vim-mustache-handlebars'
 Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
 Plugin 'klen/python-mode'
-
+Plugin 'mattn/emmet-vim'
 
 " Tab completion
 Plugin 'Shougo/neocomplete.vim'
