@@ -22,6 +22,9 @@ Plugin 'gmarik/Vundle.vim'
 " File management
 Plugin 'scrooloose/nerdtree'
 
+" Status line
+Plugin 'bling/vim-airline'
+
 " Parentheses/brackets galore
 Plugin 'Raimondi/delimitMate'
 Plugin 'luochen1990/rainbow'
@@ -65,6 +68,8 @@ set mouse=a
 
 " Turning things on
 let g:rainbow_active=1
+let g:airline_powerline_fonts=1
+set laststatus=2
 
 " Tab completion
 let g:neocomplete#enable_at_startup = 1
