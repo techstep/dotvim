@@ -21,6 +21,7 @@ Plugin 'gmarik/Vundle.vim'
 
 " File management
 Plugin 'scrooloose/nerdtree'
+Plugin 'jistr/vim-nerdtree-tabs'
 
 " Status line
 Plugin 'bling/vim-airline'
@@ -32,11 +33,13 @@ Plugin 'luochen1990/rainbow'
 " Searching
 Plugin 'rking/ag.vim'
 Plugin 'mileszs/ack.vim'
+Plugin 'kien/ctrlp.vim'
 
 " VCS commands
 Plugin 'vcscommand.vim'
+Plugin 'tpope/vim-fugitive'
 
-" Language syntax bundles
+" Language syntax bundle_hooks  
 Plugin 'vim-perl/vim-perl'
 Plugin 'jelera/vim-javascript-syntax'
 Plugin 'othree/javascript-libraries-syntax.vim'
@@ -45,12 +48,27 @@ Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
 Plugin 'klen/python-mode'
 Plugin 'mattn/emmet-vim'
+Plugin 'JuliaLang/julia-vim'
+Plugin 'kchmck/vim-coffee-script'
+Plugin 'jmcantrell/vim-virtualenv'
+Plugin 'moll/vim-node'
+Plugin 'groenewege/vim-less'
+
+
+" IDE-ish things
+Plugin 'majutsushi/tagbar'
+Plugin 'jlanzarotta/bufexplorer'
+Plugin 'vim-scripts/mru.vim'
+Plugin 'rizzatti/dash.vim'
 
 " Tab completion
 Plugin 'Shougo/neocomplete.vim'
 Plugin 'Shougo/neosnippet'
 Plugin 'Shougo/neosnippet-snippets'
 
+" Themes
+Plugin 'altercation/vim-colors-solarized'
+Plugin 'chriskempson/base16-vim'
 
 " cleaning up Vundle
 call vundle#end()
@@ -70,6 +88,7 @@ set mouse=a
 let g:rainbow_active=1
 let g:airline_powerline_fonts=1
 set laststatus=2
+let g:airline#extensions#tabline#enabled=1
 
 " Tab completion
 let g:neocomplete#enable_at_startup = 1
@@ -97,11 +116,25 @@ set expandtab
 " quicksave
 nmap <leader>w :w!<cr>
 
-" set NERDTree to ,p
+" set NERDTree to ,p and toggling to ,n
 nmap <leader>p :NERDTree<cr>
+nmap <leader>n :NERDTreeTabsToggle<CR>
 
 " I like my searches case insensitive, thanks
 set ignorecase
+
+" split to the right and to the bottom, rather than to the usual left-and-top.
+set splitbelow
+set splitright
+
+" navigate between the splits easier
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-H> <C-W><C-H>
+nnoremap <C-L> <C-W><C-H>
+
+" fencepost (```) syntax highlight for github-flavored markdown
+let g:markdown_fenced_languages=['css', 'javascript', 'json=javascript', 'perl', 'xml']
 
 " I want to manipulate tabs
 map <leader>tn :tabnew<cr>
