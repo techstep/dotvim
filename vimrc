@@ -1,7 +1,7 @@
-" quicksave
-nmap <leader>w :w!<cr>
-
+" vimrc 0.2
 " Rob Jefferson <techstep@gmail.com>
+"
+" Designed to help me get work done
 
 " Make vim work like vim, and not vi
 set nocompatible
@@ -17,7 +17,8 @@ set rtp+=~/.vim/bundle/Vundle.vim
 let s:hostname = system("echo -n \"$(hostname)\"")
 
 " since I work on a machine with a version of git not compiled
-" for https access, I need to drop back to git on that machine
+" for https access, I need to drop back to the git protocol on 
+" that machine
 if s:hostname == "cherry"
     let g:vundle_default_git_proto='git'
 endif
@@ -98,7 +99,10 @@ let g:airline_powerline_fonts=1
 set laststatus=2
 let g:airline#extensions#tabline#enabled=1
 
-" Tab completion, using neocomplete on systems with lua
+" Tab completion, using neocomplete on systems
+" where vim has lua support compiled (again, this
+" isn't the case on some of the dev systems I work with)
+
 if has("lua") == 1
     let g:neocomplete#enable_at_startup = 1
     let g:neocomplete#enable_smart_case = 1
@@ -110,7 +114,7 @@ if has("lua") == 1
     function! s:my_cr_function()
         return neocomplete#close_popup()."\<cr>"
     endfunction
-endif
+endif 
 
 " reset the leader to a more easily-accessible character (thanks to amix)
 let mapleader=","
