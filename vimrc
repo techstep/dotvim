@@ -14,6 +14,14 @@ syntax enable
 
 " Include the Vundle bundle
 set rtp+=~/.vim/bundle/Vundle.vim
+let s:hostname = system("echo -n \"$(hostname)\"")
+
+" since I work on a machine with a version of git not compiled
+" for https access, I need to drop back to git on that machine
+if s:hostname == "cherry"
+    let g:vundle_default_git_proto='git'
+endif
+
 call vundle#begin()
 
 " Let Vundle manage Vundle
@@ -90,18 +98,19 @@ let g:airline_powerline_fonts=1
 set laststatus=2
 let g:airline#extensions#tabline#enabled=1
 
-" Tab completion
-let g:neocomplete#enable_at_startup = 1
-let g:neocomplete#enable_smart_case = 1
-let g:neocomplete#sources#syntax#min_keyword_length = 3
-let g:neocomplete#lock_buffer_name_pattern = '\*ku\*'
-inoremap <expr><C-g>     neocomplete#undo_completion()
-inoremap <expr><C-l>     neocomplete#complete_common_string()
-inoremap <silent> <cr> <C-r>=<SID>my_cr_function()<cr>
-
-function! s:my_cr_function()
-    return neocomplete#close_popup()."\<cr>"
-endfunction
+" Tab completion, using neocomplete on systems with lua
+if has("lua") == 1
+    let g:neocomplete#enable_at_startup = 1
+    let g:neocomplete#enable_smart_case = 1
+    let g:neocomplete#sources#syntax#min_keyword_length = 3
+    let g:neocomplete#lock_buffer_name_pattern = '\*ku\*'
+    inoremap <expr><C-g>     neocomplete#undo_completion()
+    inoremap <expr><C-l>     neocomplete#complete_common_string()
+    inoremap <silent> <cr> <C-r>=<SID>my_cr_function()<cr>
+    function! s:my_cr_function()
+        return neocomplete#close_popup()."\<cr>"
+    endfunction
+endif
 
 " reset the leader to a more easily-accessible character (thanks to amix)
 let mapleader=","
