@@ -12,75 +12,8 @@ filetype off
 " I like syntax highlighting
 syntax enable
 
-" Include the Vundle bundle
-set rtp+=~/.vim/bundle/Vundle.vim
-let s:hostname = system("echo -n \"$(hostname)\"")
+source ~/.vim/plugin_list.vim
 
-" since I work on a machine with a version of git not compiled
-" for https access, I need to drop back to the git protocol on 
-" that machine
-if s:hostname == "cherry"
-    let g:vundle_default_git_proto='git'
-endif
-
-call vundle#begin()
-
-" Let Vundle manage Vundle
-Plugin 'gmarik/Vundle.vim'
-
-" File management
-Plugin 'scrooloose/nerdtree'
-Plugin 'jistr/vim-nerdtree-tabs'
-
-" Status line
-Plugin 'bling/vim-airline'
-
-" Parentheses/brackets galore
-Plugin 'Raimondi/delimitMate'
-Plugin 'luochen1990/rainbow'
-
-" Searching
-Plugin 'rking/ag.vim'
-Plugin 'mileszs/ack.vim'
-Plugin 'kien/ctrlp.vim'
-
-" VCS commands
-Plugin 'vcscommand.vim'
-Plugin 'tpope/vim-fugitive'
-
-" Language syntax bundle_hooks  
-Plugin 'vim-perl/vim-perl'
-Plugin 'jelera/vim-javascript-syntax'
-Plugin 'othree/javascript-libraries-syntax.vim'
-Plugin 'mustache/vim-mustache-handlebars'
-Plugin 'godlygeek/tabular'
-Plugin 'plasticboy/vim-markdown'
-Plugin 'klen/python-mode'
-Plugin 'mattn/emmet-vim'
-Plugin 'JuliaLang/julia-vim'
-Plugin 'kchmck/vim-coffee-script'
-Plugin 'jmcantrell/vim-virtualenv'
-Plugin 'moll/vim-node'
-Plugin 'groenewege/vim-less'
-
-
-" IDE-ish things
-Plugin 'majutsushi/tagbar'
-Plugin 'jlanzarotta/bufexplorer'
-Plugin 'vim-scripts/mru.vim'
-Plugin 'rizzatti/dash.vim'
-
-" Tab completion
-Plugin 'Shougo/neocomplete.vim'
-Plugin 'Shougo/neosnippet'
-Plugin 'Shougo/neosnippet-snippets'
-
-" Themes
-Plugin 'altercation/vim-colors-solarized'
-Plugin 'chriskempson/base16-vim'
-
-" cleaning up Vundle
-call vundle#end()
 filetype plugin indent on
 
 " Backspace should go to the previous line etc.
@@ -102,19 +35,6 @@ let g:airline#extensions#tabline#enabled=1
 " Tab completion, using neocomplete on systems
 " where vim has lua support compiled (again, this
 " isn't the case on some of the dev systems I work with)
-
-if has("lua") == 1
-    let g:neocomplete#enable_at_startup = 1
-    let g:neocomplete#enable_smart_case = 1
-    let g:neocomplete#sources#syntax#min_keyword_length = 3
-    let g:neocomplete#lock_buffer_name_pattern = '\*ku\*'
-    inoremap <expr><C-g>     neocomplete#undo_completion()
-    inoremap <expr><C-l>     neocomplete#complete_common_string()
-    inoremap <silent> <cr> <C-r>=<SID>my_cr_function()<cr>
-    function! s:my_cr_function()
-        return neocomplete#close_popup()."\<cr>"
-    endfunction
-endif 
 
 " reset the leader to a more easily-accessible character (thanks to amix)
 let mapleader=","
