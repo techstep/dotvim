@@ -60,6 +60,10 @@ set ignorecase
 set splitbelow
 set splitright
 
+" make searching update as I type, and highlight the results
+set incsearch
+set hlsearch
+
 " navigate between the splits easier
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
@@ -68,6 +72,8 @@ nnoremap <C-L> <C-W><C-H>
 
 " fencepost (```) syntax highlight for github-flavored markdown
 let g:markdown_fenced_languages=['css', 'javascript', 'json=javascript', 'perl', 'xml']
+
+let g:used_javascript_libs='underscore,backbone,jquery'
 
 " I want to manipulate tabs
 map <leader>tn :tabnew<cr>

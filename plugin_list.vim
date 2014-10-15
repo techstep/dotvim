@@ -51,11 +51,11 @@ Plugin 'jmcantrell/vim-virtualenv'
 Plugin 'moll/vim-node'
 Plugin 'groenewege/vim-less'
 
-
 " IDE-ish things
 Plugin 'majutsushi/tagbar'
 Plugin 'jlanzarotta/bufexplorer'
 Plugin 'vim-scripts/mru.vim'
+Plugin 'terryma/vim-multiple-cursors'
 
 " Tab completion
 Bundle "MarcWeber/vim-addon-mw-utils"
