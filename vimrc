@@ -3,6 +3,14 @@
 "
 " Designed to help me get work done
 
+" Because I use fish, and it's not POSIX-compatible,
+" I need to run bash instead or else vundle throws
+" myriad errors
+
+if $SHELL=~'bin/fish'
+    set shell=/bin/bash
+endif
+
 " Make vim work like vim, and not vi
 set nocompatible
 

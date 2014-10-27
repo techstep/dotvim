@@ -50,12 +50,20 @@ Plugin 'kchmck/vim-coffee-script'
 Plugin 'jmcantrell/vim-virtualenv'
 Plugin 'moll/vim-node'
 Plugin 'groenewege/vim-less'
+Plugin 'lukerandall/haskellmode-vim'
+Plugin 'derekwyatt/vim-scala'
+
+" Clojure
+Plugin 'guns/vim-clojure-static'
+Plugin 'tpope/vim-fireplace'
+Plugin 'guns/vim-clojure-highlight'
 
 " IDE-ish things
 Plugin 'majutsushi/tagbar'
 Plugin 'jlanzarotta/bufexplorer'
 Plugin 'vim-scripts/mru.vim'
 Plugin 'terryma/vim-multiple-cursors'
+
 
 " Tab completion
 Bundle "MarcWeber/vim-addon-mw-utils"
