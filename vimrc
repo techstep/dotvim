@@ -1,4 +1,4 @@
-" vimrc 0.2
+" vimrc 0.3
 " Rob Jefferson <techstep@gmail.com>
 "
 " Designed to help me get work done
@@ -40,15 +40,12 @@ let g:airline_powerline_fonts=1
 set laststatus=2
 let g:airline#extensions#tabline#enabled=1
 
-" Tab completion, using neocomplete on systems
-" where vim has lua support compiled (again, this
-" isn't the case on some of the dev systems I work with)
-
-" reset the leader to a more easily-accessible character (thanks to amix)
+" reset the leader to a more easily-accessible character (thanks to 
+" amix for the suggestion of using the comma)
 let mapleader=","
 let g:mapleader=","
 
-" spaces instead of tabs (4 spaces to the putative tab)
+" spaces instead of tabs (4 spaces to the tab)
 set tabstop=4
 set softtabstop=4
 set shiftwidth=4
@@ -82,6 +79,12 @@ nnoremap <C-L> <C-W><C-H>
 let g:markdown_fenced_languages=['css', 'javascript', 'json=javascript', 'perl', 'xml']
 
 let g:used_javascript_libs='underscore,backbone,jquery'
+
+let g:pymode_folding=0
+
+" Sometimes I work in Fortran; I want consistent highlighitng
+
+let fortran_free_source=1
 
 " I want to manipulate tabs
 map <leader>tn :tabnew<cr>
