@@ -91,9 +91,6 @@ Plugin 'chriskempson/base16-vim'
 Plugin 'flazz/vim-colorschemes'
 Plugin 'itchyny/landscape.vim'
 
-" Math syntax
-Plugin 'arecarn/crunch.vim'
-
 " cleaning up Vundle
 call vundle#end()
 
