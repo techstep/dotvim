@@ -76,7 +76,7 @@ Plugin 'majutsushi/tagbar'
 Plugin 'jlanzarotta/bufexplorer'
 Plugin 'vim-scripts/mru.vim'
 Plugin 'terryma/vim-multiple-cursors'
-
+Plugin 'wesQ3/vim-windowswap'
 
 " Tab completion
 Bundle "MarcWeber/vim-addon-mw-utils"
