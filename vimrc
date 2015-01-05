@@ -14,17 +14,18 @@ endif
 " Make vim work like vim, and not vi
 set nocompatible
 
-" Turning off filetype detection for now
-filetype off
-
 " I like syntax highlighting
 syntax enable
 
+" Turning off filetype detection for now
+filetype off
+
 source ~/.vim/plugin_list.vim
 
+" Turning it back on after the plugins are loaded
 filetype plugin indent on
 
-" Backspace should go to the previous line etc.
+" Backspace should go to the previous line, etc.
 set backspace=indent,eol,start
 
 " Mucking around with colors
@@ -54,7 +55,7 @@ set expandtab
 " quicksave
 nmap <leader>w :w!<cr>
 
-" set NERDTree to ,p and toggling to ,n
+" set NERDTree to ,p and toggling in tabs to ,n
 nmap <leader>p :NERDTree<cr>
 nmap <leader>n :NERDTreeTabsToggle<CR>
 
