@@ -1,4 +1,4 @@
-" vimrc 0.3
+" vimrc 0.4
 " Rob Jefferson <techstep@gmail.com>
 "
 " Designed to help me get work done
@@ -71,10 +71,29 @@ set incsearch
 set hlsearch
 
 " navigate between the splits easier
-nnoremap <C-J> <C-W><C-J>
-nnoremap <C-K> <C-W><C-K>
-nnoremap <C-H> <C-W><C-H>
-nnoremap <C-L> <C-W><C-L>
+" helper functions for wrapping between split panes
+" (cf. http://bit.ly/1wjRwBl)
+function! s:GotoNextWindow(direction, count)
+    let l:prevWinNr = winnr()
+    execute a:count . 'wincmd' a:direction
+    return winnr() != l:prevWinNr
+endfunction
+
+function! s:JumpWithWrap(direction, opposite)
+    if ! s:GotoNextWindow(a:direction, v:count1)
+        call s:GotoNextWindow(a:opposite, 999)
+    endif
+endfunction
+
+"nnoremap <C-J> <C-W><C-J>
+"nnoremap <C-K> <C-W><C-K>
+"nnoremap <C-H> <C-W><C-H>
+"nnoremap <C-L> <C-W><C-L>
+
+nnoremap <C-H> :<C-u>call <SID>JumpWithWrap('h', 'l')<CR>
+nnoremap <C-J> :<C-u>call <SID>JumpWithWrap('j', 'k')<CR>
+nnoremap <C-K> :<C-u>call <SID>JumpWithWrap('k', 'j')<CR>
+nnoremap <C-L> :<C-u>call <SID>JumpWithWrap('l', 'h')<CR>
 
 " fencepost (```) syntax highlight for github-flavored markdown
 let g:markdown_fenced_languages=['css', 'javascript', 'json=javascript', 'perl', 'xml']
