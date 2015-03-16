@@ -60,6 +60,8 @@ Plugin 'elzr/vim-json'
 Plugin 'vim-scripts/SQLUtilities'
 Plugin 'vim-scripts/SQLComplete.vim'
 Plugin 'chase/vim-ansible-yaml'
+Plugin 'LaTeX-Box-Team/LaTeX-Box'
+Plugin 'gisraptor/vim-lilypond-integrator'
 
 " Clojure
 Plugin 'guns/vim-clojure-static'
