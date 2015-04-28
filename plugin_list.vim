@@ -62,6 +62,7 @@ Plugin 'vim-scripts/SQLComplete.vim'
 Plugin 'chase/vim-ansible-yaml'
 Plugin 'LaTeX-Box-Team/LaTeX-Box'
 Plugin 'gisraptor/vim-lilypond-integrator'
+Plugin 'Glench/Vim-Jinja2-Syntax'
 
 " Clojure
 Plugin 'guns/vim-clojure-static'

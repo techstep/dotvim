@@ -40,6 +40,7 @@ let g:rainbow_active=1
 let g:airline_powerline_fonts=1
 set laststatus=2
 let g:airline#extensions#tabline#enabled=1
+let g:htmljinja_disable_detection=0
 
 " reset the leader to a more easily-accessible character (thanks to 
 " amix for the suggestion of using the comma)
