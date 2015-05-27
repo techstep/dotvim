@@ -42,10 +42,20 @@ set laststatus=2
 let g:airline#extensions#tabline#enabled=1
 let g:htmljinja_disable_detection=0
 
+" character encodings
+set encoding=utf-8
+set fileencoding=utf-8
+
+" increase the history from 20 (default)
+set history=1000
+
 " reset the leader to a more easily-accessible character (thanks to 
 " amix for the suggestion of using the comma)
 let mapleader=","
 let g:mapleader=","
+
+" Highlight the cursor line -- makes it harder to get lost on a crowded scree
+set cursorline
 
 " spaces instead of tabs (4 spaces to the tab)
 set tabstop=4
@@ -86,11 +96,6 @@ function! s:JumpWithWrap(direction, opposite)
     endif
 endfunction
 
-"nnoremap <C-J> <C-W><C-J>
-"nnoremap <C-K> <C-W><C-K>
-"nnoremap <C-H> <C-W><C-H>
-"nnoremap <C-L> <C-W><C-L>
-
 nnoremap <C-H> :<C-u>call <SID>JumpWithWrap('h', 'l')<CR>
 nnoremap <C-J> :<C-u>call <SID>JumpWithWrap('j', 'k')<CR>
 nnoremap <C-K> :<C-u>call <SID>JumpWithWrap('k', 'j')<CR>
@@ -101,9 +106,12 @@ let g:markdown_fenced_languages=['css', 'javascript', 'json=javascript', 'perl',
 
 let g:used_javascript_libs='underscore,backbone,jquery'
 
+" folding active by default is annoying
 let g:pymode_folding=0
+set foldlevelstart=99
 
-" Sometimes I work in Fortran; I want consistent highlighitng
+" Sometimes I work in Fortran; I want consistent highlighitng when I'm using
+" freeform F90/F95 source
 
 let fortran_free_source=1
 
