@@ -55,7 +55,7 @@ let mapleader=","
 let g:mapleader=","
 
 " Highlight the cursor line -- makes it harder to get lost on a crowded scree
-set cursorline
+" set cursorline
 
 " spaces instead of tabs (4 spaces to the tab)
 set tabstop=4
