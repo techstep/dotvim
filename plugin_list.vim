@@ -66,6 +66,7 @@ Plugin 'Glench/Vim-Jinja2-Syntax'
 Plugin 'motus/pig.vim'
 Plugin 'idris-hackers/idris-vim'
 Plugin 'rgrinberg/vim-ocaml'
+Plugin 'fatih/vim-go'
 
 " Clojure
 Plugin 'guns/vim-clojure-static'
