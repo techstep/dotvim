@@ -4,13 +4,6 @@
 set rtp+=~/.vim/bundle/Vundle.vim
 let s:hostname = system("echo -n \"$(hostname)\"")
 
-" since I work on a machine with a version of git not compiled
-" for https access, I need to drop back to the git protocol on 
-" that machine
-if s:hostname == "cherry"
-    let g:vundle_default_git_proto='git'
-endif
-
 call vundle#begin()
 
 " Let Vundle manage Vundle
@@ -67,6 +60,8 @@ Plugin 'motus/pig.vim'
 Plugin 'idris-hackers/idris-vim'
 Plugin 'rgrinberg/vim-ocaml'
 Plugin 'fatih/vim-go'
+Plugin 'jdonaldson/vaxe'
+Plugin 'netdata/vim-puppet'
 
 " Clojure
 Plugin 'guns/vim-clojure-static'

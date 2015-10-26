@@ -3,14 +3,14 @@ dotvim
 
 Another attempt at a reasonable vim configuration. Previously, I was inspired by 
 [Amir Salihefendic's vim file](https://github.com/amix), but decided I wanted an
-approach that was easier to maintain.
+approach that was easier for me to maintain.
 
-This time I am using [Vundle](https://github.com/gmarik/Vundle.vim) for package
+This time, I've created my own from scratch, using [Vundle](https://github.com/gmarik/Vundle.vim) for package
 control.
 
 I am still trying to work out the bugs to get this to work across my three
-environments (Arch Linux desktop, Debian Linux remote servers, OS X laptop), and 
-as such there are some specific configurations for that.
+environments (Arch Linux desktop, Debian Linux remote servers, OS X laptop, whatever
+I'm using for AWS), and as such there are some specific configurations for that.
 
 (*TODO*: Spin off the OS/machine-dependent stuff to a separate file. Also, 
 spin off plugins for things that the underlying system doesn't have (for 
@@ -18,7 +18,7 @@ example, if a machine doesn't have Clojure, I don't need to install the
 half-dozen or so Clojure packages).)
 
 Needless to say, this is not really suited for general use, but maybe it will
-serve as a launchpad for your own configurations..
+serve as a launchpad for your own configurations.
 
 Installation
 ------------
@@ -26,10 +26,6 @@ Installation
 Get the repo:
 
 `git clone https://github.com/techstep/dotvim ~/.vim`
-
-Replace that `https://` with `git://` if, for some reason, you have a version
-of Git that's not compiled with `https`. (I have a version on a work server that I
-can't recompile.)
 
 Make a symlink so that Vim picks up the config file.
 
