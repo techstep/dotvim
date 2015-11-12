@@ -57,11 +57,13 @@ Plugin 'LaTeX-Box-Team/LaTeX-Box'
 Plugin 'gisraptor/vim-lilypond-integrator'
 Plugin 'Glench/Vim-Jinja2-Syntax'
 Plugin 'motus/pig.vim'
+Plugin 'keith/swift.vim'
 Plugin 'idris-hackers/idris-vim'
 Plugin 'rgrinberg/vim-ocaml'
 Plugin 'fatih/vim-go'
 Plugin 'jdonaldson/vaxe'
 Plugin 'netdata/vim-puppet'
+Plugin 'dleonard0/pony-vim-syntax'
 
 " Clojure
 Plugin 'guns/vim-clojure-static'
