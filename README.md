@@ -8,14 +8,10 @@ approach that was easier for me to maintain.
 This time, I've created my own from scratch, using [Vundle](https://github.com/gmarik/Vundle.vim) for package
 control.
 
-I am still trying to work out the bugs to get this to work across my three
-environments (Arch Linux desktop, Debian Linux remote servers, OS X laptop, whatever
-I'm using for AWS), and as such there are some specific configurations for that.
-
-(*TODO*: Spin off the OS/machine-dependent stuff to a separate file. Also, 
-spin off plugins for things that the underlying system doesn't have (for 
-example, if a machine doesn't have Clojure, I don't need to install the 
-half-dozen or so Clojure packages).)
+Becuase I deal with computers in different environments, a good number of plugins depend on 
+other things being installed. (For example, I use [Pig](https://pig.apache.org/) at home, but not on my work
+machines. Likewise, I use Clojure on some machines, but not others, so on those that don't have it, I don't 
+need to install the multitude of Clojure packages.)
 
 Needless to say, this is not really suited for general use, but maybe it will
 serve as a launchpad for your own configurations.
