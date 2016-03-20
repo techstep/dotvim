@@ -48,6 +48,10 @@ Plugin 'plasticboy/vim-markdown'
 Plugin 'klen/python-mode'
 Plugin 'mattn/emmet-vim'
 
+if executable("alda")
+    Plugin 'daveyarwood/vim-alda'
+endif
+
 if executable("julia")
     Plugin 'JuliaLang/julia-vim'
 endif
