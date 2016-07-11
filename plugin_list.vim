@@ -48,6 +48,10 @@ Plugin 'plasticboy/vim-markdown'
 Plugin 'klen/python-mode'
 Plugin 'mattn/emmet-vim'
 
+if executable("elixir")
+    Plugin 'elixir-lang/vim-elixir'
+endif
+
 if executable("alda")
     Plugin 'daveyarwood/vim-alda'
 endif
