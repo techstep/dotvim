@@ -54,6 +54,10 @@ set history=1000
 let mapleader=","
 let g:mapleader=","
 
+" add in a local leader
+let maplocalleader="\\"
+let g:maplocalleader="\\"
+
 " Highlight the cursor line -- makes it harder to get lost on a crowded scree
 " set cursorline
 
