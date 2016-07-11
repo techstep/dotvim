@@ -53,10 +53,6 @@ if executable("gpg")
     Plugin 'jamessan/vim-gnupg'
 endif
     
-if executable("alda")
-    Plugin 'daveyarwood/vim-alda'
-endif
-
 if executable("julia")
     Plugin 'JuliaLang/julia-vim'
 endif
